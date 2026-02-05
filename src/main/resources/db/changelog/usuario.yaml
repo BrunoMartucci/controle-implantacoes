@@ -22,3 +22,32 @@ databaseChangeLog:
                   type: VARCHAR(100)
                   constraints:
                     nullable: false
+
+  - changeSet:
+      id: 2024-0002
+      author: Bruno
+      failOnError: false
+
+      changes:
+        - addColumn:
+            tableName: usuario
+
+            columns:
+              - column:
+                  name: email
+                  type: VARCHAR(150)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+              - column:
+                  name: senha
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: perfil
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
