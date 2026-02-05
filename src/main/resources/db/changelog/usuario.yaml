@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2024-0001
+      author: Bruno
+      failOnError: false
+
+      changes:
+        - createTable:
+            tableName: usuario
+
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: nome
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false

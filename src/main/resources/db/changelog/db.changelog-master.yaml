@@ -1,0 +1,16 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 00000000000001
+      author: Bruno
+      failOnError: false
+      validCheckSum: false
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: |
+              CREATE EXTENSION IF NOT EXISTS unaccent;
+              CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+  - include:
+      file: db/changelog/usuario.yaml
