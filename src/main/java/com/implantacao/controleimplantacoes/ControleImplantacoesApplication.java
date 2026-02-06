@@ -13,12 +13,4 @@ public class ControleImplantacoesApplication {
 		SpringApplication.run(ControleImplantacoesApplication.class, args);
 	}
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
-
-	@PostConstruct
-	public void gerarSenha() {
-		System.out.println("HASH GERADO:");
-		System.out.println(passwordEncoder.encode("123456"));
-	}
 }

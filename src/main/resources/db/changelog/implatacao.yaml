@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20260206141300
+      author: Bruno
+      changes:
+        - createTable:
+            tableName: implantacao
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: numero_os
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cod_cli
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nome_cli
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: tecnico
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: data_implantacao
+                  type: DATE
+              - column:
+                  name: data_lan
+                  type: DATE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: produto_implantacao
+                  type: VARCHAR(150)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: modalidade_implantacao
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ambiente_cloud
+                  type: VARCHAR(10)
