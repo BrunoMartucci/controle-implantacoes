@@ -1,6 +1,6 @@
-package entity;
+package com.implantacao.controleimplantacoes.entity;
 
-import domain.PerfilUsuario;
+import com.implantacao.controleimplantacoes.domain.PerfilUsuario;
 import jakarta.persistence.*;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,4 +1,4 @@
-package security;
+package com.implantacao.controleimplantacoes.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

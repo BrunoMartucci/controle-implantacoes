@@ -1,9 +1,10 @@
-package service;
+package com.implantacao.controleimplantacoes.service;
 
 
-import entity.Usuario;
+
+import com.implantacao.controleimplantacoes.entity.Usuario;
 import org.springframework.stereotype.Service;
-import repository.UsuarioRepository;
+import com.implantacao.controleimplantacoes.repository.UsuarioRepository;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,12 +1,13 @@
-package controller;
+package com.implantacao.controleimplantacoes.controller;
 
-import domain.PerfilUsuario;
-import entity.Usuario;
+
+import com.implantacao.controleimplantacoes.domain.PerfilUsuario;
+import com.implantacao.controleimplantacoes.entity.Usuario;
+import com.implantacao.controleimplantacoes.service.UsuarioService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import service.UsuarioService;
 
 import java.util.List;
 

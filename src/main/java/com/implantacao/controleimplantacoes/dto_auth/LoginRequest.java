@@ -1,4 +1,4 @@
-package dto.auth;
+package com.implantacao.controleimplantacoes.dto_auth;
 
 public record LoginRequest(
         String email,

@@ -1,8 +1,8 @@
-package entity;
+package com.implantacao.controleimplantacoes.entity;
 
-import domain.AmbienteCloud;
-import domain.ModalidadeImplantacao;
-import domain.ProdutoImplantacao;
+import com.implantacao.controleimplantacoes.domain.AmbienteCloud;
+import com.implantacao.controleimplantacoes.domain.ModalidadeImplantacao;
+import com.implantacao.controleimplantacoes.domain.ProdutoImplantacao;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
