@@ -1,5 +1,6 @@
 package com.implantacao.controleimplantacoes.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.implantacao.controleimplantacoes.domain.AmbienteCloud;
 import com.implantacao.controleimplantacoes.domain.ModalidadeImplantacao;
 import com.implantacao.controleimplantacoes.domain.ProdutoImplantacao;
@@ -25,8 +26,10 @@ public class Implantacao {
     @Column(name = "nome_cli", nullable = false)
     private String nomeCliente;
 
-    @Column(name = "tecnico", nullable = false)
-    private String tecnico;
+    @ManyToOne
+    @JoinColumn(name = "tecnico_id", nullable = false)
+    @JsonIgnoreProperties({"password", "authorities"})
+    private Usuario tecnico;
 
     @Column(name = "data_implantacao")
     private Date dataImplantacao;
@@ -49,7 +52,7 @@ public class Implantacao {
     public Implantacao() {
     }
 
-    public Implantacao(Long id, Long numeroOS, Long codigoCliente, String nomeCliente, String tecnico, Date dataImplantacao, LocalDate dataLancamento, ProdutoImplantacao produtoImplantacao, ModalidadeImplantacao modalidadeImplantacao, AmbienteCloud ambienteCloud) {
+    public Implantacao(Long id, Long numeroOS, Long codigoCliente, String nomeCliente, Usuario tecnico, Date dataImplantacao, LocalDate dataLancamento, ProdutoImplantacao produtoImplantacao, ModalidadeImplantacao modalidadeImplantacao, AmbienteCloud ambienteCloud) {
         this.id = id;
         this.numeroOS = numeroOS;
         this.codigoCliente = codigoCliente;
@@ -101,11 +104,11 @@ public class Implantacao {
         this.nomeCliente = nomeCliente;
     }
 
-    public String getTecnico() {
+    public Usuario getTecnico() {
         return tecnico;
     }
 
-    public void setTecnico(String tecnico) {
+    public void setTecnico(Usuario tecnico) {
         this.tecnico = tecnico;
     }
 

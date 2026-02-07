@@ -1,0 +1,53 @@
+- changeSet:
+    id: 20260702145700
+    author: Bruno
+    changes:
+      - createTable:
+          tableName: agenda_tecnico
+          columns:
+            - column:
+                name: id
+                type: BIGINT
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+
+            - column:
+                name: tecnico_id
+                type: BIGINT
+                constraints:
+                  nullable: false
+
+            - column:
+                name: data
+                type: DATE
+                constraints:
+                  nullable: false
+
+            - column:
+                name: hora_inicio
+                type: TIME
+                constraints:
+                  nullable: false
+
+            - column:
+                name: hora_fim
+                type: TIME
+                constraints:
+                  nullable: false
+
+            - column:
+                name: tipo
+                type: VARCHAR(30)
+                constraints:
+                  nullable: false
+
+      - addForeignKeyConstraint:
+          baseTableName: agenda_tecnico
+          baseColumnNames: tecnico_id
+          referencedTableName: usuario
+          referencedColumnNames: id
+          constraintName: fk_agenda_tecnico_usuario
+          onDelete: RESTRICT
+          onUpdate: CASCADE

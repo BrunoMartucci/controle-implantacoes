@@ -54,3 +54,34 @@ databaseChangeLog:
               - column:
                   name: ambiente_cloud
                   type: VARCHAR(10)
+
+  - changeSet:
+      id: 202607021308
+      author: Bruno
+      changes:
+        - addColumn:
+            tableName: implantacao
+            columns:
+              - column:
+                  name: tecnico_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: implantacao
+            baseColumnNames: tecnico_id
+            referencedTableName: usuario
+            referencedColumnNames: id
+            constraintName: fk_implantacao_tecnico
+            onDelete: RESTRICT
+            onUpdate: CASCADE
+
+  - changeSet:
+      id: 202602071312
+      author: Bruno
+      changes:
+        - dropColumn:
+            tableName: implantacao
+            columnName: tecnico
+
